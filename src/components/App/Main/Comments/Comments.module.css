@@ -1,0 +1,59 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.commentsCount {
+  margin-top: 10px;
+  color: #565a69;
+  font-weight: 300;
+  font-size: 2.25em;
+}
+
+.mainComments {
+  flex-basis: fill;
+  flex-grow: 1;
+}
+
+.commentsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  max-height: 100%;
+  margin-bottom: 35px;
+}
+
+.postComment {
+  flex-grow: 1;
+  resize: none;
+}
+
+.container {
+  width: 95%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .postComment {
+    height: 40px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .postComment {
+    height: 55px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .postComment {
+    height: 75px;
+  }
+}

@@ -1,0 +1,38 @@
+.add {
+  width: 19%;
+  height: 40px;
+  background-color: #27ccc0;
+  color: white;
+  font-weight: 600;
+}
+
+.add:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.delete {
+  width: 14%;
+  height: 34px;
+  margin-left: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ff3159;
+  color: #ff3159;
+  font-weight: 300;
+}
+
+.delete:focus {
+  background-color: #ffecf0;
+}
+
+.delete:active {
+  background-color: #ffdbe2;
+}
+
+.add:focus {
+  background-color: #24beb3;
+}
+
+.add:active {
+  background-color: #22afa5;
+}
