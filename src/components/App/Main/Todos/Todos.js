@@ -25,7 +25,7 @@ const Todos = ({
 
   return (
     <section className={styles.todoList}>
-      <div className={"sticky"}>
+      <div className="sticky">
         <div className="container">
           <header>
             <h2 className={styles.items}>{todosHeader}</h2>
