@@ -1,10 +1,11 @@
 {
   "name": "todo-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "homepage": "http://amuou.github.io/todo-react",
   "dependencies": {
     "lodash": "^4.17.11",
+    "normalize.css": "^8.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-scripts": "2.1.5",
