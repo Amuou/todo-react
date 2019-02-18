@@ -13,7 +13,7 @@ const CommentsList = ({
   active
 }) => {
   const textareaEl = useRef(null);
-  const handleKeyPress = e => {
+  const handleKeyDown = e => {
     const comment = textareaEl.current;
     if (e.key === "Enter" && e.ctrlKey && comment.value.trim()) {
       comments[active] &&
@@ -53,7 +53,7 @@ const CommentsList = ({
             cols="100"
             rows="7"
             ref={textareaEl}
-            onKeyPress={e => handleKeyPress(e)}
+            onKeyDown={e => handleKeyDown(e)}
           />
         </footer>
       </div>
