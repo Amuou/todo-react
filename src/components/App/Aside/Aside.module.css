@@ -4,13 +4,9 @@
   margin-right: 10px;
 }
 
-.mainAside {
-  position: sticky;
-  top: 0px;
-  min-height: 100%;
-}
-
 .header {
+  position: sticky;
+  top: 24px;
   text-align: center;
 }
 
