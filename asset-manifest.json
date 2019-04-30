@@ -1,15 +1,17 @@
 {
-  "main.css": "/todo-react/static/css/main.3afceebc.chunk.css",
-  "main.js": "/todo-react/static/js/main.401d442c.chunk.js",
-  "main.js.map": "/todo-react/static/js/main.401d442c.chunk.js.map",
-  "runtime~main.js": "/todo-react/static/js/runtime~main.3a890a3f.js",
-  "runtime~main.js.map": "/todo-react/static/js/runtime~main.3a890a3f.js.map",
-  "static/css/2.af2c1e4b.chunk.css": "/todo-react/static/css/2.af2c1e4b.chunk.css",
-  "static/js/2.f44c1fc1.chunk.js": "/todo-react/static/js/2.f44c1fc1.chunk.js",
-  "static/js/2.f44c1fc1.chunk.js.map": "/todo-react/static/js/2.f44c1fc1.chunk.js.map",
-  "index.html": "/todo-react/index.html",
-  "precache-manifest.6db174ff0a690c2e99fa7501b205821d.js": "/todo-react/precache-manifest.6db174ff0a690c2e99fa7501b205821d.js",
-  "service-worker.js": "/todo-react/service-worker.js",
-  "static/css/2.af2c1e4b.chunk.css.map": "/todo-react/static/css/2.af2c1e4b.chunk.css.map",
-  "static/css/main.3afceebc.chunk.css.map": "/todo-react/static/css/main.3afceebc.chunk.css.map"
+  "files": {
+    "main.css": "/todo-react/static/css/main.e806fb73.chunk.css",
+    "main.js": "/todo-react/static/js/main.239d03e6.chunk.js",
+    "main.js.map": "/todo-react/static/js/main.239d03e6.chunk.js.map",
+    "runtime~main.js": "/todo-react/static/js/runtime~main.6292bb99.js",
+    "runtime~main.js.map": "/todo-react/static/js/runtime~main.6292bb99.js.map",
+    "static/css/2.764ccc25.chunk.css": "/todo-react/static/css/2.764ccc25.chunk.css",
+    "static/js/2.c329315b.chunk.js": "/todo-react/static/js/2.c329315b.chunk.js",
+    "static/js/2.c329315b.chunk.js.map": "/todo-react/static/js/2.c329315b.chunk.js.map",
+    "index.html": "/todo-react/index.html",
+    "precache-manifest.c9359aac44fc4e15e5eb18d898e3a6c7.js": "/todo-react/precache-manifest.c9359aac44fc4e15e5eb18d898e3a6c7.js",
+    "service-worker.js": "/todo-react/service-worker.js",
+    "static/css/2.764ccc25.chunk.css.map": "/todo-react/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.e806fb73.chunk.css.map": "/todo-react/static/css/main.e806fb73.chunk.css.map"
+  }
 }
