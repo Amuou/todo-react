@@ -5,7 +5,7 @@ import styles from "./App.module.css";
 
 const App = () => (
   <div className={styles.app}>
-    <Aside header="Dairy App" comment="Comment with no sense" />
+    <Aside header="Todo App" comment="Simple todo app with comments" />
     <Main />
   </div>
 );
