@@ -1,8 +1,8 @@
-import React from "react";
-import Button from "../Button/Button";
-import styles from "./TodoItem.module.css";
-import PropTypes from "prop-types";
-import _ from "lodash";
+import React from 'react';
+import Button from '../Button/Button';
+import styles from './TodoItem.module.css';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
 
 const TodoItem = ({
   todo,
@@ -11,7 +11,7 @@ const TodoItem = ({
   comments,
   setActive,
   setComments,
-  setTodos
+  setTodos,
 }) => {
   const deleteTodo = () => {
     setComments(_.omit(comments, [todo.id]));
@@ -22,7 +22,7 @@ const TodoItem = ({
 
   return (
     <li
-      className={`${styles.todoItem} ${isActive ? styles.active : ""}`}
+      className={`${styles.todoItem} ${isActive ? styles.active : ''}`}
       onClick={() => setActive(todo.id)}
     >
       <div className={styles.todoContainer}>
@@ -37,13 +37,13 @@ const TodoItem = ({
 TodoItem.propTypes = {
   todo: PropTypes.shape({
     text: PropTypes.string,
-    id: PropTypes.string
+    id: PropTypes.string,
   }).isRequired,
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
-      id: PropTypes.string
-    })
+      id: PropTypes.string,
+    }),
   ).isRequired,
   setTodos: PropTypes.func.isRequired,
   active: PropTypes.string.isRequired,
@@ -52,11 +52,11 @@ TodoItem.propTypes = {
     any: PropTypes.arrayOf(
       PropTypes.shape({
         text: PropTypes.string,
-        id: PropTypes.string
-      })
-    )
+        id: PropTypes.string,
+      }),
+    ),
   }),
-  setComments: PropTypes.func.isRequired
+  setComments: PropTypes.func.isRequired,
 };
 
 export default TodoItem;

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import UserPicture from "../UserPicture/UserPicture";
-import styles from "./Comment.module.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import UserPicture from '../UserPicture/UserPicture';
+import styles from './Comment.module.css';
 
 const Comment = ({ text, color }) => (
   <li className={styles.comment}>
@@ -13,7 +13,7 @@ const Comment = ({ text, color }) => (
 );
 
 Comment.propTypes = {
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 export default Comment;

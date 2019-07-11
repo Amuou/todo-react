@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./Button.module.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Button.module.css';
 
 const Button = ({ type, text, onClick, disabled }) => (
   <input
@@ -15,7 +15,7 @@ const Button = ({ type, text, onClick, disabled }) => (
 Button.propTypes = {
   type: PropTypes.string,
   text: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default Button;

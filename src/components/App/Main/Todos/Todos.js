@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import TodoItem from "./TodoItem/TodoItem";
-import Button from "./Button/Button";
-import styles from "./Todos.module.css";
-import uuidv4 from "uuid/v4";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import TodoItem from './TodoItem/TodoItem';
+import Button from './Button/Button';
+import styles from './Todos.module.css';
+import uuidv4 from 'uuid/v4';
 
 const Todos = ({
   todosHeader,
@@ -12,15 +12,15 @@ const Todos = ({
   active,
   setActive,
   comments,
-  setComments
+  setComments,
 }) => {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState('');
   const handleSubmit = e => {
     e.preventDefault();
     const uniqId = uuidv4();
     setComments({ ...comments, [uniqId]: [] });
     setTodos([...todos, { text: todo, id: uniqId }]);
-    setTodo("");
+    setTodo('');
   };
 
   return (
@@ -75,8 +75,8 @@ Todos.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
-      id: PropTypes.string
-    })
+      id: PropTypes.string,
+    }),
   ).isRequired,
   setTodos: PropTypes.func.isRequired,
   active: PropTypes.string.isRequired,
@@ -85,11 +85,11 @@ Todos.propTypes = {
     any: PropTypes.arrayOf(
       PropTypes.shape({
         text: PropTypes.string,
-        id: PropTypes.string
-      })
-    )
+        id: PropTypes.string,
+      }),
+    ),
   }),
-  setComments: PropTypes.func.isRequired
+  setComments: PropTypes.func.isRequired,
 };
 
 export default Todos;

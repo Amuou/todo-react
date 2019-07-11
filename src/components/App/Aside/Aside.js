@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./Aside.module.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Aside.module.css';
 
 const Aside = ({ header, comment }) => (
   <aside className={styles.mainAside}>
@@ -13,7 +13,7 @@ const Aside = ({ header, comment }) => (
 
 Aside.propTypes = {
   header: PropTypes.string,
-  comment: PropTypes.string
+  comment: PropTypes.string,
 };
 
 export default Aside;
