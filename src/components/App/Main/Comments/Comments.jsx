@@ -1,9 +1,10 @@
-import React, { useRef } from 'react';
-import Comment from './Comment/Comment';
-import UserPicture from './UserPicture/UserPicture';
-import PropTypes from 'prop-types';
-import uuidv4 from 'uuid/v4';
-import styles from './Comments.module.css';
+import PropTypes from 'prop-types'
+import React, { useRef } from 'react'
+import uuidv4 from 'uuid/v4'
+
+import Comment from './Comment/Comment'
+import styles from './Comments.module.css'
+import UserPicture from './UserPicture/UserPicture'
 
 const CommentsList = ({
   comments,
@@ -12,21 +13,23 @@ const CommentsList = ({
   commentsHeader,
   active,
 }) => {
-  const textareaEl = useRef(null);
-  const handleKeyDown = e => {
-    const comment = textareaEl.current;
-    if (e.key === 'Enter' && e.ctrlKey && comment.value.trim()) {
-      comments[active] &&
+  const textareaEl = useRef(null)
+  const handleKeyDown = (e) => {
+    const comment = textareaEl.current
+    if (e.key === 'Enter' && comment.value.trim()) {
+      if (comments[active]) {
         setComments({
           ...comments,
           [active]: [
             ...comments[active],
             { text: comment.value, id: uuidv4() },
           ],
-        });
-      comment.value = '';
+        })
+      }
+
+      comment.value = ''
     }
-  };
+  }
 
   return (
     <section className={styles.comments}>
@@ -56,25 +59,23 @@ const CommentsList = ({
             cols="100"
             rows="7"
             ref={textareaEl}
-            onKeyDown={e => handleKeyDown(e)}
+            onKeyDown={(e) => handleKeyDown(e)}
           />
         </footer>
       </div>
     </section>
-  );
-};
+  )
+}
 
 CommentsList.propTypes = {
   commentsHeader: PropTypes.string.isRequired,
   active: PropTypes.string.isRequired,
-  activeComents: PropTypes.shape({
-    any: PropTypes.arrayOf(
-      PropTypes.shape({
-        text: PropTypes.string,
-        id: PropTypes.string,
-      }),
-    ),
-  }),
+  activeComments: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   comments: PropTypes.shape({
     any: PropTypes.arrayOf(
       PropTypes.shape({
@@ -82,8 +83,8 @@ CommentsList.propTypes = {
         id: PropTypes.string,
       }),
     ),
-  }),
+  }).isRequired,
   setComments: PropTypes.func.isRequired,
-};
+}
 
-export default CommentsList;
+export default CommentsList

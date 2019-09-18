@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './Aside.module.css';
+import PropTypes from 'prop-types'
+import React from 'react'
+
+import styles from './Aside.module.css'
 
 const Aside = ({ header, comment }) => (
   <aside className={styles.mainAside}>
@@ -9,11 +10,11 @@ const Aside = ({ header, comment }) => (
       <span className={styles.comment}>{comment}</span>
     </header>
   </aside>
-);
+)
 
 Aside.propTypes = {
-  header: PropTypes.string,
-  comment: PropTypes.string,
-};
+  header: PropTypes.string.isRequired,
+  comment: PropTypes.string.isRequired,
+}
 
-export default Aside;
+export default Aside

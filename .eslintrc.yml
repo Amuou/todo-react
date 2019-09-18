@@ -1,0 +1,39 @@
+extends:
+  - airbnb
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:react/recommended
+  - prettier
+  - prettier/react
+  - plugin:prettier/recommended
+
+parser: babel-eslint
+
+globals:
+  localStorage: true
+  document: true
+    
+
+parserOptions:
+  ecmaFeatures: 
+    jsx: true
+  ecmaVersion: 2020
+  sourceType: module
+
+env:
+  es6: true
+
+plugins:
+  - prettier
+  - import
+  - simple-import-sort
+  - react-hooks
+
+rules:
+  prettier/prettier: 'error'
+  simple-import-sort/sort: 'error'
+  sort-imports: 'off'
+  react-hooks/rules-of-hooks: 'error'
+  react-hooks/exhaustive-deps: 'warn'
+  jsx-a11y/click-events-have-key-events: 'off'
+  jsx-a11y/no-noninteractive-element-interactions: 'off'

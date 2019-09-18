@@ -1,24 +1,27 @@
 {
   "name": "todo-react",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "homepage": "http://amuou.github.io/todo-react",
   "dependencies": {
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.15",
     "normalize.css": "^8.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "^3.0.1",
-    "uuid": "^3.3.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "^3.1.1",
+    "uuid": "^3.3.3"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "prettier": "prettier --write src/**/*.js"
+    "eject": "react-scripts eject",
+    "lint": "npx eslint src/**/*.{js,jsx}",
+    "lint:fix": "npx eslint --fix src/**/*.{js,jsx}",
+    "predeploy": "npm run build",
+    "prettier": "prettier --write src/**/*.js",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,7 +33,15 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "eslint-plugin-simple-import-sort": "^4.0.0",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2"
   }
 }

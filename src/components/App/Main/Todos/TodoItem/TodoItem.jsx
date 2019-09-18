@@ -1,8 +1,9 @@
-import React from 'react';
-import Button from '../Button/Button';
-import styles from './TodoItem.module.css';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
+import omit from 'lodash/omit'
+import PropTypes from 'prop-types'
+import React from 'react'
+
+import Button from '../Button/Button'
+import styles from './TodoItem.module.css'
 
 const TodoItem = ({
   todo,
@@ -14,11 +15,11 @@ const TodoItem = ({
   setTodos,
 }) => {
   const deleteTodo = () => {
-    setComments(_.omit(comments, [todo.id]));
-    setTodos(todos.filter(elem => elem.id !== todo.id));
-  };
-  const commentsCount = comments[todo.id] ? comments[todo.id].length : 0;
-  const isActive = active === todo.id;
+    setComments(omit(comments, [todo.id]))
+    setTodos(todos.filter((elem) => elem.id !== todo.id))
+  }
+  const commentsCount = comments[todo.id] ? comments[todo.id].length : 0
+  const isActive = active === todo.id
 
   return (
     <li
@@ -31,8 +32,8 @@ const TodoItem = ({
         <Button type="delete" text="Delete" onClick={deleteTodo} />
       </div>
     </li>
-  );
-};
+  )
+}
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
@@ -55,8 +56,8 @@ TodoItem.propTypes = {
         id: PropTypes.string,
       }),
     ),
-  }),
+  }).isRequired,
   setComments: PropTypes.func.isRequired,
-};
+}
 
-export default TodoItem;
+export default TodoItem

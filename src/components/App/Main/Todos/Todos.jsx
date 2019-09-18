@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import TodoItem from './TodoItem/TodoItem';
-import Button from './Button/Button';
-import styles from './Todos.module.css';
-import uuidv4 from 'uuid/v4';
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import uuidv4 from 'uuid/v4'
+
+import Button from './Button/Button'
+import TodoItem from './TodoItem/TodoItem'
+import styles from './Todos.module.css'
 
 const Todos = ({
   todosHeader,
@@ -14,14 +15,14 @@ const Todos = ({
   comments,
   setComments,
 }) => {
-  const [todo, setTodo] = useState('');
-  const handleSubmit = e => {
-    e.preventDefault();
-    const uniqId = uuidv4();
-    setComments({ ...comments, [uniqId]: [] });
-    setTodos([...todos, { text: todo, id: uniqId }]);
-    setTodo('');
-  };
+  const [todo, setTodo] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const uniqId = uuidv4()
+    setComments({ ...comments, [uniqId]: [] })
+    setTodos([...todos, { text: todo, id: uniqId }])
+    setTodo('')
+  }
 
   return (
     <section className={styles.todoList}>
@@ -33,7 +34,7 @@ const Todos = ({
           <section className={styles.addForm}>
             <form
               className={styles.addTodo}
-              onSubmit={e => todo && handleSubmit(e)}
+              onSubmit={(e) => todo && handleSubmit(e)}
             >
               <input
                 className={styles.inputText}
@@ -41,7 +42,7 @@ const Todos = ({
                 type="text"
                 placeholder="Type name here..."
                 value={todo}
-                onChange={e => setTodo(e.target.value)}
+                onChange={(e) => setTodo(e.target.value)}
               />
               <Button type="add" text="Add new" disabled={!todo} />
             </form>
@@ -51,7 +52,7 @@ const Todos = ({
       <section className={styles.todoItems}>
         {todos && (
           <ul className={styles.itemsList}>
-            {todos.map(elem => (
+            {todos.map((elem) => (
               <TodoItem
                 key={elem.id}
                 active={active}
@@ -67,8 +68,8 @@ const Todos = ({
         )}
       </section>
     </section>
-  );
-};
+  )
+}
 
 Todos.propTypes = {
   todosHeader: PropTypes.string.isRequired,
@@ -88,8 +89,8 @@ Todos.propTypes = {
         id: PropTypes.string,
       }),
     ),
-  }),
+  }).isRequired,
   setComments: PropTypes.func.isRequired,
-};
+}
 
-export default Todos;
+export default Todos
