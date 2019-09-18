@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from 'react'
 
-import Comments from './Comments/Comments'
+import CommentsList from './CommentsList/CommentsList'
 import styles from './Main.module.css'
 import Todos from './Todos/Todos'
 
-const Main = () => {
+const useTodosWithComments = () => {
   const storedTodos = JSON.parse(localStorage.getItem('todos')) || []
   const storedComments = JSON.parse(localStorage.getItem('comments')) || {}
   const [todos, setTodos] = useState(storedTodos)
   const [comments, setComments] = useState(storedComments)
-  const [active, setActive] = useState('')
-  const todoIndex = active && todos.findIndex((elem) => elem.id === active)
-  const commentsNumber = todoIndex === -1 ? '' : todoIndex
-  const activeComments = comments[active]
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
     localStorage.setItem('comments', JSON.stringify(comments))
   }, [comments, todos])
+
+  return [todos, comments, setTodos, setComments]
+}
+
+const Main = () => {
+  const [active, setActive] = useState('')
+  const [todos, comments, setTodos, setComments] = useTodosWithComments()
+  const todoIndex = active && todos.findIndex((elem) => elem.id === active)
+  const commentsNumber = todoIndex === -1 ? '' : todoIndex
+  const activeComments = comments[active]
 
   return (
     <main className={styles.mainSection}>
@@ -34,7 +40,7 @@ const Main = () => {
       </section>
       <section className={styles.container}>
         {activeComments && (
-          <Comments
+          <CommentsList
             commentsHeader={`Comments #${commentsNumber}`}
             comments={comments}
             setComments={setComments}

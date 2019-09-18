@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import uuidv4 from 'uuid/v4'
 
 import Comment from './Comment/Comment'
-import styles from './Comments.module.css'
+import styles from './CommentsList.module.css'
 import UserPicture from './UserPicture/UserPicture'
 
 const CommentsList = ({
@@ -17,16 +17,10 @@ const CommentsList = ({
   const handleKeyDown = (e) => {
     const comment = textareaEl.current
     if (e.key === 'Enter' && comment.value.trim()) {
-      if (comments[active]) {
-        setComments({
-          ...comments,
-          [active]: [
-            ...comments[active],
-            { text: comment.value, id: uuidv4() },
-          ],
-        })
-      }
-
+      setComments({
+        ...comments,
+        [active]: [...comments[active], { text: comment.value, id: uuidv4() }],
+      })
       comment.value = ''
     }
   }
